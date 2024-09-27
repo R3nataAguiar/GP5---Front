@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -80,22 +80,16 @@ h2 {
 
 /* Conteúdo Principal */
 .content {
-    height: 100vh;
-}
-
-.content h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.content p {
-    font-size: 1.2em;
-    line-height: 1.6;
+    flex-grow: 1; /* Isso permite que o conteúdo cresça e preencha a altura disponível */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px; /* Ajuste para evitar sobreposição com o cabeçalho fixo */
 }
 
 .video-content {
     width: 100%;
-    height: 100%;
     object-fit: fill;
 }
 
@@ -105,21 +99,15 @@ h2 {
     height: 600px;
 }
 
-.categoria{
+.categoria {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 50px;
+    padding: 10px;
     width: 100%;
-    height: 85%;
-    position: absolute;
-    top: 710px;
 }
 
-.sombra:hover{
+.sombra:hover {
     box-shadow: 0 0 30px 0px rgba(255, 255, 255, 0.3), 
                 0 0 40px 1px rgba(255, 255, 255, 0.5);
     transform: translateY(-10px);
@@ -132,10 +120,136 @@ h2 {
     text-align: center;
     padding: 20px 0;
     width: 100%;
+    margin-top: auto; /* Isso garante que o rodapé fique no final da página */
 }
 
-.tamanho{
+.tamanho {
     width: 30vw;
     height: 30vw;
     border-radius: 8px;
+}
+/* Media Queries para Responsividade */
+
+/* Dispositivos pequenos (até 768px) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logo-title {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .top-nav ul {
+        flex-direction: column;
+        padding-right: 0;
+        gap: 20px;
+    }
+
+    .top-nav ul li a {
+        font-size: 1em;
+    }
+
+    .categoria {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .tamanho {
+        width: 80vw;
+        height: auto;
+    }
+
+    .video-content-fundo {
+        height: 300px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .footer {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    /* Adicionando o estilo do ícone "hambúrguer" e menu */
+    .top-nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+
+    .top-nav ul {
+        flex-direction: column;
+        padding-top: 50px;
+    }
+
+    .top-nav ul li a {
+        font-size: 1.5em;
+        padding: 15px;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+        z-index: 11;
+    }
+
+    .top-nav.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Dispositivos médios (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .top-nav ul {
+        gap: 30px;
+    }
+
+    .categoria {
+        justify-content: space-around;
+    }
+
+    .tamanho {
+        width: 40vw;
+        height: auto;
+    }
+
+    .video-content-fundo {
+        height: 400px;
+    }
+}
+
+/* Telas grandes (mais de 1024px) */
+@media (min-width: 1025px) {
+    .tamanho {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .categoria {
+        justify-content: space-between;
+    }
+
+    /* Ocultar ícone hambúrguer em telas grandes */
+    .hamburger {
+        display: none;
+    }
 }
