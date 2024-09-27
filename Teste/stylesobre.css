@@ -31,37 +31,29 @@ h1, h2 {
     background-color: #1A3D7C;
     color: #FFFFFF;
     padding: 10px;
-    width: 150px;
+    width: 200px;
+    height: 300px;
     text-align: center;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .person img {
     border-radius: 50%;
     width: 100%;
     height: auto;
+    justify-self: center;
+    filter: drop-shadow(0 8px 16px hsla(5, 90%, 4%, .2));
+    transition: transform .3s;
 }
 
-.about-us {
-    background-color: #1A3D7C;
-    color: #FFFFFF;
-    padding: 20px;
-    margin: 30px 0;
-    text-align: center;
-    border-radius: 10px;
+.person__name {
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    margin-bottom: .5rem;
 }
-
-.about-us button {
-    background-color: #FCA311; /* Cor laranja */
-    color: #FFFFFF;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.about-us button:hover {
-    background-color: #FCA311; /* Laranja mais escuro ao passar o mouse */
+.person:hover .modal__img {
+    transform: scale(1.1);
 }
 
 .quote {
@@ -80,6 +72,82 @@ footer {
     padding: 10px;
     background-color: #1A3D7C;
     color: #FFFFFF;
+}
+
+/* modal */
+
+.modal-person {
+    position: fixed;
+    inset: 0;
+    background-color: hsla(5, 90%, 4%, .2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(24px);
+    display: grid;
+    place-items: center;
+    padding: 2rem 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: var(--z-modal);
+    transition: opacity .4s, visibility .4s;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.modal_card {
+    position: relative;
+    background-color: var(--body-color);
+    padding: 3rem 1.25rem 2rem;
+    display: grid;
+    row-gap: 1.5rem;
+    text-align: center;
+    transform: rotateX(90deg);
+    transition: transform .6s;
+    flex-direction: column;
+}
+.modal_card{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+.modal__img {
+    width: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.modal__name {
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    margin-bottom: .5rem;
+}
+.modal__info {
+    margin-bottom: 1rem;
+}
+
+/* Active modal */
+.active-modal {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+    z-index: 999;
+}
+
+.modal_card {
+    transform: rotateX(0);
+    transition: transform 0.6s;
 }
 
 @media (max-width: 768px) {
