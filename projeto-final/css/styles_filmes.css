@@ -79,6 +79,16 @@ h2 {
     flex-wrap: wrap;
     margin-top: 100px;
     width: 100%;
+    flex-direction: column;
+}
+.acao{
+    display: flex;
+}
+.comedia{
+    display: flex;
+}
+.terror{
+    display: flex;
 }
 
 .content-Filmes h2 {
@@ -110,6 +120,8 @@ h2 {
     border-radius: 8px;
     margin-right: 70px;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction:row;
 }
 
 
