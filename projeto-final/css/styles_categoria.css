@@ -76,13 +76,19 @@ h2 {
 /* Imagem de Cabeçalho */
 .header-img {
     display: block;
-    margin: 80px auto 20px; /* Ajuste para evitar sobreposição com o header fixo */
+    margin: 80px auto 20px;
     width: 90%;
-    max-width: 1200px;
-    height: auto;
+    width: 1500px;
+    height: 700px;
     opacity: 0.8;
     border-radius: 10px;
     object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.header-img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
 }
 
 /* Seção de filmes */
@@ -127,6 +133,8 @@ h2 {
     transform: scale(1.1);
     opacity: 0.8;
 }
+
+
 
 /* Rodapé (Footer) */
 .footer {
@@ -180,6 +188,10 @@ h2 {
     cursor: pointer;
 }
 
+.modal__content{
+    text-align: justify;
+}
+
 .modal__img {
     width: 100%;
     height: auto;
@@ -188,7 +200,8 @@ h2 {
 }
 
 .modal__info {
-    font-size: 1em;
+    padding-top: 30px;
+    font-size: 0.7em;
     color: #ddd;
 }
 
