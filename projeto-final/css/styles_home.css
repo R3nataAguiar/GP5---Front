@@ -29,6 +29,7 @@ body {
     width: 100%;
     transition: background-color 0.3s ease;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    z-index: 10;
 }
 
 /* Logo e título no topo */
@@ -94,6 +95,12 @@ h2 {
     object-fit: fill;
 }
 
+.video-content-fundo {
+    width: 100%;  
+    object-fit: fill;
+    height: 600px;
+}
+
 .categoria{
     display: flex;
     justify-content: space-between;
@@ -104,6 +111,8 @@ h2 {
     padding-bottom: 50px;
     width: 100%;
     height: 85%;
+    position: absolute;
+    top: 710px;
 }
 
 /* Rodapé (Footer) */
