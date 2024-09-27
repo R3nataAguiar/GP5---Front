@@ -115,6 +115,12 @@ h2 {
     top: 710px;
 }
 
+.sombra:hover{
+    box-shadow: 0 0 30px 0px rgba(255, 255, 255, 0.3), 
+                0 0 40px 1px rgba(255, 255, 255, 0.5);
+    transform: translateY(-10px);
+}
+
 /* Rodapé (Footer) */
 .footer {
     background-color: #1a3d7c;
