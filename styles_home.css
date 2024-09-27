@@ -1,108 +1,111 @@
 /* Reset de margens e paddings */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Configuração do body */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Cabeçalho (Topo) */
 .header {
-  background-color: rgba(26, 61, 124, 1);
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.274);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 /* Estado transparente */
 .header.transparent {
-  background-color: rgba(227, 233, 245, 0.053); /* 50% de opacidade */
+    background-color: rgba(26, 61, 124, 0.5); /* 50% de opacidade */
 }
 
 /* Logo e título no topo */
 .logo-title {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .logo {
-  width: 50px;
-  margin-right: 10px;
+    width: 50px;
+    margin-right: 10px;
 }
 
 h2 {
-  font-size: 1.8em;
-}
-
-.videomenu {
-  height: 1000px;
-  background-color: #637c1a;
+    font-size: 1.8em;
 }
 
 /* Menu de navegação no topo */
 .top-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
 .top-nav ul li {
-  display: inline;
+    display: inline;
 }
 
 .top-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.2em;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
 }
 
 .top-nav ul li a:hover {
-  color: #00aaff;
+    color: #00aaff;
 }
 
 /* Conteúdo Principal */
 .content {
-  padding: 100px;
-  text-align: center;
-  flex-grow: 1;
+    text-align: center;
+    flex-grow: 1;
 }
 
 .content h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
 .content p {
-  font-size: 1.2em;
-  line-height: 1.6;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.videomenu{
+    width: 100vw;
+    height: 44.1vw;;
+    background-color: #637c1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .video-content {
-  max-width: 100%; /* Garante que o vídeo não ultrapasse a largura da tela */
-  height: auto; /* Mantém a proporção do vídeo */
-  margin-top: 20px; /* Espaço acima do vídeo */
+    width: 100vw;
+    height: 35vw;
+    margin-top: 20px; /* Espaço acima do vídeo */
 }
 /* Rodapé (Footer) */
 .footer {
-  background-color: #1a3d7c;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  width: 100%;
+    background-color: #1a3d7c;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
 }
