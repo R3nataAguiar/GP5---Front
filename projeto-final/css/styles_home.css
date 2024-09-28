@@ -18,7 +18,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    text-shadow: 4px 4px 4px rgb(0, 0, 0); 
+    text-shadow: 4px 4px 4px rgb(0, 0, 0);
 }
 
 /* Cabeçalho (Topo) */
@@ -33,7 +33,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease;
     box-shadow: rgba(183, 209, 255, 0.25) 0px 4px 8px -2px,
     rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     z-index: 10;
@@ -47,12 +47,12 @@ body {
 }
 
 .logo {
-    width: 80px; 
-  height: auto; 
-  max-width: 100%; 
-  object-fit: contain; 
-  margin: 0;
-  border-radius: 50%;
+    width: 80px;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0;
+    border-radius: 50%;
 }
 
 .logosombra{
@@ -73,7 +73,7 @@ h2 {
     display: flex;
     gap: 50px;
     padding-right: 50px;
-    text-shadow: 4px 4px 4px rgb(0, 0, 0); 
+    text-shadow: 4px 4px 4px rgb(0, 0, 0);
     font-weight: bold;
 }
 
@@ -98,9 +98,6 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: -30px;
-   
-    
 }
 
 .video-content {
@@ -110,32 +107,31 @@ h2 {
 }
 
 .video-content-fundo {
-    width: 100%;  
+    width: 100%;
     object-fit: fill;
-    height: 600px;
+    height: 75vh;
 }
 
 .categoria {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
     width: 100%;
     position: absolute;
-    top: 760px;
-    
+    height: -150px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .sombra:hover {
-    box-shadow: 0 0 30px 0px rgba(255, 255, 255, 0.3), 
+    box-shadow: 0 0 30px 0px rgba(255, 255, 255, 0.3),
     0 0 40px 1px rgba(255, 255, 255, 0.5);
     transform: translateY(-10px);
 }
 
 .borda {
     border-radius: 8px;
-  }
-  
+}
 /* Rodapé (Footer) */
 .footer {
     background-color: #1a3d7c;
