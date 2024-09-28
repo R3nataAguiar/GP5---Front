@@ -25,10 +25,11 @@ h1, h2 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    margin-top: 10px;
 }
 
 .person {
-    background-color: #1A3D7C;
+    background-color: #1a3c7c1d;
     color: #FFFFFF;
     padding: 10px;
     width: 200px;
@@ -36,6 +37,12 @@ h1, h2 {
     text-align: center;
     border-radius: 10px;
     cursor: pointer;
+    border: solid 1px #FFFFFF;
+}
+.person:hover{
+    box-shadow:0 0 30px 0px rgba(255, 255, 255, 0.3),
+    0 0 40px 1px rgba(255, 255, 255, 0.5);
+    transform: translateY(-10px); ;
 }
 
 .person img {
@@ -57,7 +64,7 @@ h1, h2 {
 }
 
 .quote {
-    background-color: #1A3D7C; /* Azul escuro */
+    background-color: #1a3c7c20; /* Azul escuro */
     color: #FFFFFF;
     padding: 20px;
     font-style: italic;
@@ -65,14 +72,42 @@ h1, h2 {
     width: 50%;
     border-radius: 10px;
     text-align: center;
+    border: solid 1px #FFFFFF;
+}
+.video-fundo-sobre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
 }
 
-footer {
+.botao {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fca311;
+    color: #fff;
     text-align: center;
-    padding: 10px;
-    background-color: #1A3D7C;
-    color: #FFFFFF;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+.botao:hover {
+    background-color: #e09400;
+}
+
+
 
 /* modal */
 
@@ -149,6 +184,7 @@ footer {
     transform: rotateX(0);
     transition: transform 0.6s;
 }
+
 
 @media (max-width: 768px) {
     .team-container {
