@@ -109,7 +109,7 @@ h2 {
 .video-content-fundo {
     width: 100%;
     object-fit: fill;
-    height: 75vh;
+    height: 90vh;
 }
 
 .categoria {
@@ -118,7 +118,7 @@ h2 {
     align-items: center;
     width: 100%;
     position: absolute;
-    height: -150px;
+    margin-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -200,9 +200,12 @@ h2 {
 
     .footer {
         padding: 10px;
-        font-size: 0.9em;
+        font-size: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
     }
 
+    
     /* Adicionando o estilo do ícone "hambúrguer" e menu */
     .top-nav {
         display: none; /* Esconde o menu por padrão */
