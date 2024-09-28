@@ -1,5 +1,4 @@
 
-
 /* Reset de margens e paddings */
 * {
     margin: 0;
@@ -7,47 +6,58 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Configuração do body */
 body {
     font-family: Arial, sans-serif;
     background-color: #000;
     color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Cabeçalho (Topo) */
 .header {
-    background-color: rgba(17, 17, 17, 0.095);
+    background-color: rgba(17, 17, 17, 0); /* Totalmente transparente */
     color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px;
-    position: fill;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; 
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    z-index: 10;
 }
 
 /* Logo e título no topo */
 .logo-title {
-    width: 80px;
+    display: flex; /* Mantém a disposição em linha */
+    align-items: center; /* Alinha verticalmente a logo e o título */
     margin-right: 10px;
-    display: flex;
-    align-items: center;
-    border-radius: 50%;
-    box-shadow: rgb(255, 255, 255) 0px 4px 8px -2px, rgba(255, 255, 255, 0.08) 0px 0px 0px 1px;
 }
 
 .logo {
-    width: 80px;
-    margin-right: 10px;
-    border-radius: 50%;
+    width: 80px; /* Largura desejada */
+    height: auto; /* Mantém a proporção da imagem */
+    max-width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
+    object-fit: contain; /* Mantém a proporção sem distorção */
+    margin: 0; /* Remover qualquer margem */
 }
 
 h2 {
     font-size: 1.8em;
+    margin-right: 100px;
+    margin-left: 10px; /* Adiciona espaço entre a logo e o título */
+    display: inline; /* Garante que o texto fique na mesma linha */
+    text-align: center;
 }
 
 /* Menu de navegação no topo */
@@ -73,33 +83,38 @@ h2 {
 }
 
 /* Conteúdo Principal */
-
-.content h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.content p {
-    font-size: 1.2em;
-    line-height: 1.6;
+.content {
+    flex-grow: 1; /* Isso permite que o conteúdo cresça e preencha a altura disponível */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px; /* Ajuste para evitar sobreposição com o cabeçalho fixo */
 }
 
 .video-content {
     width: 100%;
-    height: 100%;
     object-fit: fill;
 }
 
-.categoria{
+.video-content-fundo {
+    width: 100%;  
+    object-fit: fill;
+    height: 600px;
+}
+
+.categoria {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 10px;
-    padding-top: 50px;
-    padding-right: 10px;
-    padding-bottom: 50px;
+    padding: 10px;
     width: 100%;
-    height: 85%;
+}
+
+.sombra:hover {
+    box-shadow: 0 0 30px 0px rgba(255, 255, 255, 0.3), 
+                0 0 40px 1px rgba(255, 255, 255, 0.5);
+    transform: translateY(-10px);
 }
 
 /* Rodapé (Footer) */
@@ -109,10 +124,115 @@ h2 {
     text-align: center;
     padding: 20px 0;
     width: 100%;
+    margin-top: auto; /* Isso garante que o rodapé fique no final da página */
 }
 
-.tamanho{
+.tamanho {
     width: 30vw;
     height: 30vw;
     border-radius: 8px;
+}
+
+/* Media Queries para Responsividade */
+
+/* Dispositivos pequenos (até 768px) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 10px;
+        align-items: flex-start; /* Alinha itens à esquerda */
+    }
+
+    .logo-title {
+        display: flex; /* Usar flex para alinhar logo e título */
+        align-items: center; /* Alinha verticalmente logo e texto */
+        margin-bottom: 10px;
+        width: 100%; /* Faz com que o título ocupe toda a largura */
+        justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+    }
+
+    .logo {
+        margin-right: 10px; /* Adiciona espaço entre logo e título */
+    }
+
+    .top-nav ul {
+        flex-direction: column;
+        padding-right: 0;
+        gap: 20px;
+    }
+
+    .top-nav ul li a {
+        font-size: 1em;
+    }
+
+    .categoria {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .tamanho {
+        width: 80vw;
+        height: auto;
+    }
+
+    .video-content-fundo {
+        height: 300px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .footer {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    /* Adicionando o estilo do ícone "hambúrguer" e menu */
+    .top-nav {
+        display: none; /* Esconde o menu por padrão */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+
+    .top-nav ul {
+        flex-direction: column;
+        padding-top: 50px;
+    }
+
+    .top-nav ul li a {
+        font-size: 1.5em;
+        padding: 15px;
+    }
+
+    .hamburger {
+        display: block; /* Mostra o ícone "hambúrguer" apenas em dispositivos pequenos */
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+        z-index: 11;
+    }
+
+    .top-nav.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Oculta o ícone "hambúrguer" em dispositivos grandes */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* Esconde o ícone em dispositivos maiores */
+    }
 }
