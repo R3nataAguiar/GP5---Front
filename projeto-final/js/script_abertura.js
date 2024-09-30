@@ -10,11 +10,10 @@ document.getElementById("start-button").addEventListener("click", function () {
   audio.play();
 
   video.onended = function () {
-    document.getElementById("fade-container").classList.add("fade-out");
+      document.getElementById("fade-container").classList.add("fade-out");
 
-    setTimeout(function () {
-      window.location.href = "index_home.html";
-    }, 500);
-    ar;
+      setTimeout(function () {
+          window.location.href = "index_home.html";
+      }, 500);
   };
 });
