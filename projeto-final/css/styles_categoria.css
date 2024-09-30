@@ -1,25 +1,22 @@
-/* Reset de margens e paddings */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Definição de variáveis para facilitar a manutenção */
 :root {
     --body-color: #1E1E1E;
     --title-color: #FCA311;
     --z-modal: 1000;
 }
 
-/* Configuração do body */
 body {
     font-family: Arial, sans-serif;
     background-color: #000;
     color: #fff;
 }
 
-/* Cabeçalho (Topo) */
 .header {
     background-color: rgba(17, 17, 17, 0.95);
     color: #ffffff;
@@ -37,7 +34,6 @@ body {
     z-index: 100;
 }
 
-/* Logo e título no topo */
 .logo-title {
     display: flex;
     align-items: center;
@@ -55,7 +51,6 @@ h2 {
     font-size: 1.8em;
 }
 
-/* Menu de navegação no topo */
 .top-nav ul {
     list-style: none;
     display: flex;
@@ -73,20 +68,16 @@ h2 {
     color: #00aaff;
 }
 
-/* Imagem de Cabeçalho */
 .header-img {
     display: block;
     margin: 80px auto 20px;
     width: 90%;
-    width: 1500px;
+    max-width: 1500px;
     height: 700px;
     opacity: 0.8;
     border-radius: 10px;
     object-fit: cover;
     transition: transform 0.5s ease, opacity 0.5s ease;
-}
-.content{
-    background-color: #000;
 }
 
 .header-img:hover {
@@ -94,9 +85,8 @@ h2 {
     opacity: 0.8;
 }
 
-/* Seção de filmes */
 .content-Filmes {
-    padding: 20px;;
+    padding: 20px;
 }
 
 .content-Filmes h2 {
@@ -105,7 +95,6 @@ h2 {
     text-align: center;
 }
 
-/* Containers das categorias de filmes */
 .acao, .comedia, .terror {
     display: flex;
     flex-wrap: wrap;
@@ -114,7 +103,6 @@ h2 {
     margin-bottom: 40px;
 }
 
-/* Estilo dos filmes */
 .filme {
     position: relative;
     cursor: pointer;
@@ -137,9 +125,6 @@ h2 {
     opacity: 0.8;
 }
 
-
-
-/* Rodapé (Footer) */
 .footer {
     background-color: #1a3d7c;
     color: #fff;
@@ -172,14 +157,16 @@ h2 {
     background-color: var(--body-color);
     padding: 20px;
     border-radius: 10px;
-    max-width: 1000px; 
-    width: 90%; 
+    max-width: 1000px;
+    width: 90%;
+    max-height: 90vh; /* Limita a altura máxima para 90% da altura da viewport */
     text-align: center;
     transform: translateY(-50px);
     transition: transform 0.4s, opacity 0.4s;
     opacity: 0;
     font-size: 2rem;
     text-align: start;
+    overflow-y: auto; /* Adiciona a barra de rolagem vertical */
 }
 
 .modal__close {
@@ -220,18 +207,14 @@ h2 {
     opacity: 1;
 }
 
-.carousel-item:hover {
-    transform: scale(1.1);
-    opacity: 0.8;
-}
-
+/* Carrossel */
 .carousel {
     position: relative;
-    width: 90%;  /* mesma largura */
-    max-width: 1500px;  /* mesma largura máxima */
+    width: 90%;
+    max-width: 1500px;
     margin: 80px auto 20px;
     overflow: hidden;
-    border-radius: 10px;  /* bordas arredondadas */
+    border-radius: 10px;
 }
 
 .carousel-container {
@@ -241,17 +224,18 @@ h2 {
 
 .carousel-item {
     min-width: 100%;
-    height: 700px;  /* mesma altura */
-    opacity: 0.8;  /* mesma opacidade */
+    height: 700px;
+    opacity: 0.8;
     object-fit: cover;
-    border-radius: 10px;  /* bordas arredondadas */
+    border-radius: 10px;
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
+
 .carousel-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;  /* bordas arredondadas */
+    border-radius: 10px;
 }
 
 .carousel-button {
@@ -278,11 +262,48 @@ h2 {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Responsividade */
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+    .header-img {
+        height: 500px;
+    }
+
+    .filme {
+        width: 300px;
+    }
+
+    .carousel-item {
+        height: 500px;
+    }
+}
+
 @media (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
     .top-nav ul {
         flex-direction: column;
-        align-items: center;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .top-nav ul li a {
+        font-size: 1em;
+    }
+
+    .header-img {
+        width: 100%;
+        height: 400px; 
     }
 
     .filme {
@@ -290,7 +311,49 @@ h2 {
         height: 225px;
     }
 
+    .carousel-item {
+        height: 400px; 
+    }
+
+    .modal_card {
+        font-size: 1.2rem;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 5px;
+    }
+
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .top-nav ul {
+        gap: 5px;
+    }
+
     .header-img {
-        width: 100%;
+        height: 250px;
+    }
+
+    .filme {
+        width: 100px;
+        height: 150px;
+    }
+
+    .carousel-item {
+        height: 250px; 
+    }
+
+    .modal_card {
+        font-size: 1rem;
+        padding: 15px;
     }
 }
