@@ -3,24 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardButtons = document.querySelectorAll('.filme');
     const closeButtons = document.querySelectorAll('.modal__close');
 
-    // Função para ativar o modal
     const openModal = (index) => {
         modals[index].classList.add('active-modal');
     };
 
-    // Função para fechar todos os modais
     const closeModal = () => {
         modals.forEach(modal => modal.classList.remove('active-modal'));
     };
 
-    // Adicionar eventos de clique nos filmes para abrir o modal correspondente
     cardButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
             openModal(index);
         });
     });
 
-    // Adicionar eventos de clique nos botões de fechar
     closeButtons.forEach((button) => {
         button.addEventListener('click', (event) => {
             closeModal();
@@ -28,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Fechar o modal ao clicar fora do modal_card
     modals.forEach((modal) => {
         modal.addEventListener('click', () => {
             closeModal();
@@ -36,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const modalCard = modal.querySelector('.modal_card');
         modalCard.addEventListener('click', (e) => {
-            e.stopPropagation(); // Impede que o clique no modal_card feche o modal
+            e.stopPropagation(); 
         });
     });
 });
@@ -71,27 +66,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalItems = carouselItems.length;
     let currentIndex = 0;
 
-    // Função para mover o carrossel
     function moveCarousel(index) {
         carouselContainer.style.transform = `translateX(-${index * 100}%)`;
     }
 
-    // Função para avançar para o próximo slide
     function nextSlide() {
         currentIndex = (currentIndex + 1) % totalItems;
         moveCarousel(currentIndex);
     }
 
-    // Função para voltar ao slide anterior
     function prevSlide() {
         currentIndex = (currentIndex - 1 + totalItems) % totalItems;
         moveCarousel(currentIndex);
     }
-
-    // SetInterval para movimentar automaticamente o carrossel a cada 3 segundos
     let autoSlide = setInterval(nextSlide, 3000);
 
-    // Botões de navegação
     document.querySelector(".carousel-button.next").addEventListener("click", function () {
         clearInterval(autoSlide);  // Para o movimento automático quando o botão é clicado
         nextSlide();
@@ -99,8 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.querySelector(".carousel-button.prev").addEventListener("click", function () {
-        clearInterval(autoSlide);  // Para o movimento automático quando o botão é clicado
+        clearInterval(autoSlide);
         prevSlide();
-        autoSlide = setInterval(nextSlide, 3000);  // Reinicia o intervalo automático
+        autoSlide = setInterval(nextSlide, 3000);
     });
 });
