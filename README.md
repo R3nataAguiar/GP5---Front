@@ -21,13 +21,15 @@ Cineverse+ é uma nova plataforma de streaming de mídia que reúne amantes por 
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [Convertio](https://convertio.co/pt/jpg-webp/)
 * [11.zon](https://imagecompressor.11zon.com/pt/compress-webp//)
-* []()
+* [Chat.GPT](https://chatgpt.com/)
+* [Canva](https://www.canva.com/)
+* [Figma](https://www.figma.com/)
+* [clickChamp](https://clipchamp.com/pt-br/)
+* [Codeium](https://codeium.com/)
+* [Bootstrap](https://getbootstrap.com/)
 
 -------------------------------------------------------------------------
 
-
-
--------------------------------------------------------------------------
 
 ## 💁🏻‍♀️ Autores
 
