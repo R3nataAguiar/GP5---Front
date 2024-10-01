@@ -41,8 +41,8 @@ body {
 
 /* Logo e título no topo */
 .logo-title {
-    display: flex; /* Mantém a disposição em linha */
-    align-items: center; /* Alinha verticalmente a logo e o título */
+    display: flex;
+    align-items: center;
     margin-right: 10px;
 }
 
@@ -62,8 +62,8 @@ body {
 h2 {
     font-size: 1.8em;
     margin-right: 100px;
-    margin-left: 10px; /* Adiciona espaço entre a logo e o título */
-    display: inline; /* Garante que o texto fique na mesma linha */
+    margin-left: 10px;
+    display: inline; 
     text-align: center;
 }
 
@@ -154,61 +154,92 @@ h2 {
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
-        padding: 10px;
-        align-items: flex-start; /* Alinha itens à esquerda */
+        padding: 5vw; /* Ajuste para unidades relativas */
+        align-items: flex-start; 
     }
 
     .logo-title {
-        display: flex; /* Usar flex para alinhar logo e título */
-        align-items: center; /* Alinha verticalmente logo e texto */
-        margin-bottom: 10px;
-        width: 100%; /* Faz com que o título ocupe toda a largura */
-        justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+        display: flex;
+        align-items: center;
+        margin-bottom: 2vh; /* Ajuste para unidades relativas */
+        width: 100%; 
+        justify-content: flex-start; 
     }
 
     .logo {
-        margin-right: 10px; /* Adiciona espaço entre logo e título */
+        width: 30px; 
+        height: auto; 
+        margin-right: 2vw; 
     }
 
     .top-nav ul {
-        flex-direction: column;
+        flex-direction: flex;
         padding-right: 0;
-        gap: 20px;
+        gap: 3vh;
+        margin-top: 60px;
     }
 
     .top-nav ul li a {
         font-size: 1em;
     }
 
-    .categoria {
+    .content {
+        flex-grow: 1;
+        display: flex;
         flex-direction: column;
-        height: auto;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        width: 100%; 
+    }
+    
+    .categoria {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center; 
+        align-items: center; /
+        margin-top: 20px; 
+    }
+    
+    .sombra {
+        margin: 10px;
+        flex: 1 1 auto;
+        max-width: 250px;
+    }
+    
+    .tamanho {
+        width: 80%; 
+        max-width: 600px; 
+        height: auto; 
+        margin: 0 auto; 
+        display: block;
     }
 
-    .tamanho {
-        width: 80vw;
+    .video-content {
+        width: 100%;
         height: auto;
-    }
+        max-height: 100vh;
+        object-fit: contain;
 
     .video-content-fundo {
-        height: 300px;
-    }
-
-    h2 {
-        font-size: 1.5em;
+        height: 30vh;
     }
 
     .footer {
-        padding: 10px;
-        font-size: 10px;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: bold;
+    background-color: #1a3d7c;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
     }
-
     
     /* Adicionando o estilo do ícone "hambúrguer" e menu */
     .top-nav {
-        display: none; /* Esconde o menu por padrão */
+        display: none;
         position: absolute;
         top: 60px;
         right: 0;
