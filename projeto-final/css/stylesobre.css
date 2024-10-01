@@ -6,7 +6,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #000;
-    color: #fff;
+    color: #FFFFFF;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -59,7 +59,7 @@ body {
     font: 2.5rem sans-serif;
 }
 .top-nav ul li a {
-    color: #fff;
+    color: #FFFFFF;
     text-decoration: none;
     font-size: 1.2em;
 }
@@ -151,7 +151,7 @@ h1, h2 {
     display: inline-block;
     padding: 10px 20px;
     background-color: #fca311;
-    color: #fff;
+    color: #FFFFFF;
     text-align: center;
     border-radius: 25px;
     text-decoration: none;
@@ -180,24 +180,6 @@ h1, h2 {
     font-size: larger;
 }
 /* modal */
-.modal-person {
-    position: fixed;
-    inset: 0;
-    background-color: hsla(5, 90%, 4%, .2);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(24px);
-    display: grid;
-    place-items: center;
-    padding: 2rem 1.5rem;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    z-index: var(--z-modal);
-    transition: opacity .4s, visibility .4s;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
 .modal-person {
     position: fixed;
     inset: 0;
@@ -244,12 +226,12 @@ h1, h2 {
     top: 10px;
     right: 10px;
     font-size: 1.5rem;
-    color: #fff;
+    color: #FFFFFF;
     cursor: pointer;
 }
 .modal_card{
     position: relative;
-    background-color: black;
+    background-color: #1E1E1E;
     padding: 20px;
     border-radius: 10px;
     max-width: 1000px;
@@ -287,8 +269,18 @@ h1, h2 {
     line-height: 1.5;
     text-align: center;
     color: #fca311;
-    background-color: rgb(68, 68, 68);
+    background-color: #1E1E1E;
 }
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .team-container {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 10px;
+    }
+}
+
 @media (max-width: 768px) {
     .team-container {
         flex-direction: column;
@@ -297,5 +289,46 @@ h1, h2 {
 
     .quote {
         width: 80%;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    .person {
+        width: 180px;
+        height: 260px;
+    }
+
+    .modal__img {
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quote {
+        width: 90%;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .person {
+        width: 150px;
+        height: 220px;
+    }
+
+    .modal__img {
+        width: 250px;
+    }
+
+    .modal_card {
+        font-size: 1.2rem;
     }
 }
