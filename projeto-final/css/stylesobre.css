@@ -52,7 +52,12 @@ body {
 .top-nav ul li {
     display: inline;
 }
-
+.team h1, p{
+    color: #FCA311;
+}
+.team h1{
+    font: 2.5rem sans-serif;
+}
 .top-nav ul li a {
     color: #fff;
     text-decoration: none;
@@ -69,7 +74,7 @@ h1, h2 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 .team-container {
     display: flex;
@@ -123,11 +128,11 @@ h1, h2 {
     border: solid 1px #FFFFFF;
 }
 .video-fundo-sobre {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     z-index: -1;
 }
@@ -275,6 +280,14 @@ h1, h2 {
     margin-bottom: 1rem;
     line-height: 1.5;
     text-align: center;
+}
+.accordion-body{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    color: #fca311;
+    background-color: rgb(68, 68, 68);
 }
 @media (max-width: 768px) {
     .team-container {
